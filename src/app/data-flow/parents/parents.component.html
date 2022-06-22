@@ -1,0 +1,13 @@
+<p>parents works!</p>
+
+<div>
+  <ul *ngFor="let item of items">
+    <li>{{item}}</li>
+  </ul>
+</div>
+
+<app-fils (newItemEvent)="addItem($event)" [tache]="TacheActuel">
+  <ul>
+    <li *ngFor="let item of items">{{item}}</li>
+  </ul>
+</app-fils>

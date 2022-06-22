@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testAngular';
+  paramsFromParent = {title:'Enregistrer'};
+
+  public afficher(event:any):void{
+  console.log(event)
+  }
 }

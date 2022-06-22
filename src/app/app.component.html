@@ -24,7 +24,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link " tabindex="-1" routerLink="/data-flow-parents">Parent</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/data-flow-fils">Fils</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -35,5 +38,10 @@
   </div>
 </nav>
 <router-outlet>
-  
+
 </router-outlet>
+<!--
+<div class="container mt-5">
+  <app-example (monEvent)="afficher($event)" [params]="paramsFromParent"></app-example>
+</div>
+-->

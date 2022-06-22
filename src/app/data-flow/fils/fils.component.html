@@ -1,0 +1,8 @@
+<div class="container mt-5">
+ <p>La tache actuel est de</p>
+   <h1>{{tache}}</h1>
+
+  <label for="item-input">Ajouter Item:</label>
+  <input type="text" id="item-input" #newItem>
+  <button type="button" (click)="addNewItem(newItem.value)">Envoyer au fils</button>
+</div>
