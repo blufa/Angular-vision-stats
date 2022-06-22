@@ -1,0 +1,51 @@
+<div class="container">
+  <ng-template #errors>
+    <div class="text-danger">{{errorMessage}}</div>
+  </ng-template>
+    <div class="card" *ngIf="products; else errors">
+        <div class="card-header">Liste des prduits
+            <button (click)="newProduct()" *ngClass="">
+                <i class="bi bi-save"></i>
+                New Product
+              </button>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Libelle</th>
+                        <th>Prix</th>
+                        <th>Promotion</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of products">
+                        <td>{{p.id}}</td>
+                        <td>{{p.libelle}}</td>
+                        <td>{{p.prix}}</td>
+                        <td>
+                          <i *ngIf="p.promtion==true" class="bi bi-heart-fill text-success"></i>
+                        </td>
+                        <td>
+                          <button (click)="handleSetPromotion(p)" [ngClass]="p.promtion==true?'btn-danger':'btn-success'" class="btn">
+                            <span *ngIf="p.promtion==true">Promo Off</span>
+                            <span *ngIf="p.promtion==false">Promo On</span>
+                          </button>
+                        </td>
+                        <td>
+                          <button (click)="handleDeleteProduct(p)" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+  <input [(ngModel)]="jc">
+  <label>{{jc}}</label>
+</div>
